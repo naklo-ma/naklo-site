@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 140" width="360" height="140" role="img" aria-label="naklo">
+<defs>
+<style>@import url('https://fonts.googleapis.com/css2?family=Mansalva&amp;display=swap');</style>
+<filter id="rough" x="-5%" y="-10%" width="110%" height="120%"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="4"/></filter>
+</defs>
+<text x="24" y="100" transform="rotate(-3 180 70)" font-family="Mansalva, 'Caveat Brush', cursive" font-size="96" fill="#E8A33D" filter="url(#rough)">naklo</text>
+</svg>

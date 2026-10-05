@@ -1,0 +1,1 @@
+# Une adresse par ligne : le nom et le quartier (ex. Kuku Chicken, Gauthier). Les lignes qui commencent par # sont ignorées.

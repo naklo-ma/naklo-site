@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>naklo · On mange où ? Nakli te trouve le bon resto</title>
+<meta name="description" content="Dis à Nakli avec qui tu sors, ton budget et ton envie : il te trouve le bon resto à Casablanca en 3 taps. Plus de 350 adresses triées à la main, sans compte.">
+<meta name="theme-color" content="#0B090F">
+<meta property="og:title" content="naklo · On mange où ?">
+<meta property="og:description" content="Nakli te trouve le bon resto, à toute heure. Casablanca d'abord.">
+<meta property="og:image" content="assets/nakli-photo-profil.png">
+<link rel="icon" href="assets/nakli-icone.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/nakli-photo-profil.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mansalva&family=Instrument+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body data-root="" data-page="accueil">
+<div data-entete></div>
+
+<main id="contenu">
+  <section class="hero">
+    <div class="wrap">
+      <span data-nakli="neutre" class="hero-nakli nakli-flotte"></span>
+      <div>
+        <p class="surtitre" data-ville-nom>Casablanca · plus de 350 adresses</p>
+        <h1 class="pinceau" style="margin-top:10px">On mange <span class="ambre neon">où ?</span></h1>
+        <p class="tourne"><span class="sr-only">Ce soir, après minuit, à moins de 50 DH, pour un date, à 10 : </span><span aria-hidden="true">Nakli trouve <span class="mot" id="mot">ce soir</span></span></p>
+        <p class="accroche">Dis à Nakli <b>avec qui</b> tu sors, <b>ton budget</b> et <b>ton envie</b>. Il te trouve le bon resto en 3 taps, à toute heure.</p>
+        <div class="hero-actions" data-cta-principal>
+          <a class="btn" data-lien="outil" href="casablanca/">Demande à Nakli</a>
+          <a class="btn btn-secondaire" data-lien="surprise" href="casablanca/?surprise=1">Surprends-moi</a>
+        </div>
+        <div class="hero-preuves">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="#2FB7A6" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Sans compte</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="#2FB7A6" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Prix en DH par personne</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="#2FB7A6" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Aucun resto ne paie pour être classé</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="defile" id="defile" hidden>
+    <p class="sr-only" id="defile-titre">Quelques adresses de Nakli</p>
+    <div class="defile-piste" aria-labelledby="defile-titre"></div>
+  </div>
+
+  <section class="section" data-reveal aria-labelledby="t-situations">
+    <div class="wrap">
+      <div class="section-tete">
+        <p class="surtitre">Ta situation</p>
+        <h2 class="pinceau penche" id="t-situations">C'est pour quoi, ce soir ?</h2>
+      </div>
+      <div class="situations">
+        <a class="carte-lien incline" data-lien="outil" data-q="qui=Potes&n=6&budget=< 100 DH&go=1" href="casablanca/"><span class="t">Sortie entre potes</span><span class="d">Un spot pas cher pour 4 à 10</span><span class="fleche">Nakli cherche →</span></a>
+        <a class="carte-lien rouge incline" data-lien="outil" data-q="qui=Date&n=2&budget=< 250 DH&ambiance=Jolie déco&quand=Ce soir&go=1" href="casablanca/"><span class="t">Premier date</span><span class="d">Une jolie ambiance, sans te ruiner</span><span class="fleche">Nakli cherche →</span></a>
+        <a class="carte-lien incline" data-lien="outil" data-q="budget=< 50 DH&go=1" href="casablanca/"><span class="t">Petit budget</span><span class="d">Manger pour moins de 50 DH</span><span class="fleche">Nakli cherche →</span></a>
+        <a class="carte-lien incline" data-lien="outil" data-q="quand=Après minuit&go=1" href="casablanca/"><span class="t">Tard le soir</span><span class="d">Encore ouvert après minuit</span><span class="fleche">Nakli cherche →</span></a>
+        <a class="carte-lien incline" data-lien="liste" data-l="cafes-pour-reviser" href="listes/?ville=casablanca&l=cafes-pour-reviser"><span class="t">Réviser</span><span class="d">Un café où poser ton ordi</span><span class="fleche">Voir la liste →</span></a>
+        <a class="carte-lien incline" data-lien="outil" data-q="mode=groupe" href="casablanca/?mode=groupe"><span class="t">Groupe indécis</span><span class="d">Chacun coche, Nakli trouve le compromis</span><span class="fleche">Mode groupe →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" data-reveal aria-labelledby="t-etapes">
+    <div class="wrap">
+      <div class="section-tete">
+        <p class="surtitre">Comment ça marche</p>
+        <h2 class="pinceau penche" id="t-etapes">3 taps, pas de formulaire</h2>
+      </div>
+      <ol class="etapes">
+        <li><span class="num">1</span><b>Tu tapes tes options</b><p>Avec qui, combien, ton budget, ton envie, quand. Rien à écrire.</p></li>
+        <li><span class="num">2</span><b>Nakli classe</b><p>La spécialité d'abord, puis la note Google pondérée par le nombre d'avis. Les chaînes passent après.</p></li>
+        <li><span class="num">3</span><b>Tu y vas</b><p>Prix estimé, quartier, horaires, plats à goûter, et l'itinéraire en un tap.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" data-reveal aria-labelledby="t-listes">
+    <div class="wrap">
+      <div class="section-tete section-tete-ligne">
+        <div><p class="surtitre">Vu sur @naklo_ma</p><h2 class="pinceau penche" id="t-listes" style="margin-top:6px">Nos posts, en version complète</h2></div>
+        <a class="lien-fleche" data-lien="listes" href="listes/?ville=casablanca">Toutes les listes →</a>
+      </div>
+      <div class="rail rail-posts" id="rail-listes"></div>
+    </div>
+  </section>
+
+  <section class="section" data-reveal aria-labelledby="t-villes">
+    <div class="wrap">
+      <div class="section-tete">
+        <p class="surtitre">Les villes</p>
+        <h2 class="pinceau penche" id="t-villes">Casablanca d'abord</h2>
+        <p class="mut">Chaque ville a sa propre liste d'adresses, triée à la main avant l'ouverture.</p>
+      </div>
+      <div class="villes" id="villes"></div>
+    </div>
+  </section>
+
+  <section class="section" id="a-propos" data-reveal aria-labelledby="t-propos">
+    <div class="wrap">
+      <div class="deux-col">
+        <div class="section-tete">
+          <p class="surtitre">À propos</p>
+          <h2 class="pinceau penche" id="t-propos">Un pote qui connaît toutes les adresses</h2>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div class="chiffres">
+            <div><b data-compte="357" id="c-adresses">357</b><span>adresses triées à la main</span></div>
+            <div><b data-compte="13" id="c-listes">13</b><span>listes à thème</span></div>
+            <div><b>0</b><span>resto payant pour être classé</span></div>
+          </div>
+          <p>Naklo, c'est un compte food et un outil qui te dit où manger, selon ton budget, ton envie et avec qui tu sors. Pas d'appli à télécharger, pas de compte à créer.</p>
+          <p class="mut">Plus de 350 adresses à Casablanca, triées à la main : on retire les adresses fermées, mal notées ou en double. Les notes viennent de Google (relevées en octobre 2026), les prix sont estimés, et quand on n'est pas sûrs d'un horaire, on te le dit.</p>
+          <p class="mut">Aucun resto ne paie pour être classé. Si un jour une adresse est mise en avant, ce sera écrit « Partenaire ».</p>
+          <p>Suis Nakli sur <a class="handle" href="https://www.instagram.com/naklo_ma/" target="_blank" rel="noopener">Instagram</a> et <a class="handle" href="https://www.tiktok.com/@naklo_ma" target="_blank" rel="noopener">TikTok</a> : <span class="handle">@naklo_ma</span>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" data-reveal aria-labelledby="t-faq">
+    <div class="wrap">
+      <div class="section-tete">
+        <p class="surtitre">Questions</p>
+        <h2 class="pinceau penche" id="t-faq">Tu te demandes…</h2>
+      </div>
+      <div class="faq">
+        <details><summary>Comment Nakli choisit les restos ?</summary><div class="rep"><p>D'abord la spécialité : si tu veux un burger, un spécialiste du burger passe avant un resto qui en a un sur la carte. Ensuite la note Google, pondérée par le nombre d'avis (un 4,8 sur 5 000 avis compte plus qu'un 5 sur 12). Les chaînes passent un peu après.</p></div></details>
+        <details><summary>Les restos paient pour apparaître ?</summary><div class="rep"><p>Non. Le classement ne s'achète pas. Si un jour une adresse est mise en avant contre paiement, ce sera écrit « Partenaire » sur sa carte, et ça ne changera pas son rang.</p></div></details>
+        <details><summary>D'où viennent les notes et les prix ?</summary><div class="rep"><p>Les notes et le nombre d'avis viennent de Google, relevés en octobre 2026. Les prix sont des estimations par personne : on te les donne pour t'aider à choisir, pas au dirham près.</p></div></details>
+        <details><summary>Les horaires sont fiables ?</summary><div class="rep"><p>On fait de notre mieux, mais ils changent souvent. Quand on n'est pas sûrs, c'est marqué « à vérifier ». Le bouton « Photos et avis » t'emmène sur Google Maps pour confirmer avant d'y aller.</p></div></details>
+        <details><summary>Il faut créer un compte ?</summary><div class="rep"><p>Non, pas besoin. Nakli marche sans compte et sans appli à télécharger : tes choix sont gardés sur ton téléphone pour la prochaine fois.</p><p>Mais Nakli prépare peut-être un coin rien qu'à toi : tes restos préférés, des réductions… Affaire à suivre sur <a href="https://www.instagram.com/naklo_ma/" target="_blank" rel="noopener">@naklo_ma</a>.</p></div></details>
+        <details><summary>Une adresse manque ou est fermée ?</summary><div class="rep"><p>Dis-le-nous sur Instagram, <a href="https://www.instagram.com/naklo_ma/" target="_blank" rel="noopener">@naklo_ma</a>, ou par mail à <a href="mailto:contact.naklo@gmail.com">contact.naklo@gmail.com</a>. On vérifie et on met à jour.</p></div></details>
+        <details><summary>Et dans ma ville ?</summary><div class="rep"><p>On commence par Casablanca. Rabat, Marrakech et Tanger arrivent ensuite : pour chaque ville, on construit la liste d'adresses à la main avant d'ouvrir.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" data-reveal aria-labelledby="t-restos">
+    <div class="wrap">
+      <div class="bandeau rouge">
+        <div>
+          <h2 class="pinceau" id="t-restos">T'as un resto ?</h2>
+          <p style="margin-top:8px">Naklo parle chaque soir à des milliers de jeunes qui cherchent où manger. Travaillons ensemble, sans jamais acheter le classement.</p>
+        </div>
+        <a class="btn" href="restaurants/">Restaurants : on en parle</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div data-pied></div>
+
+<script src="data/villes.js"></script>
+<script src="assets/naklo.js"></script>
+<script>
+(function () {
+  const N = window.Naklo, v = N.villeActive();
+  // liens vers la ville retenue (Casablanca par défaut)
+  N.$$("[data-lien]").forEach(a => {
+    const t = a.dataset.lien;
+    if (t === "outil") a.href = N.lienVille(v) + (a.dataset.q ? "?" + a.dataset.q.replace(/ /g, "%20").replace(/</g, "%3C") : "");
+    if (t === "surprise") a.href = N.lienVille(v) + "?surprise=1";
+    if (t === "listes") a.href = N.lienListes(v);
+    if (t === "liste") a.href = N.lienListes(v, a.dataset.l);
+  });
+  N.$("[data-ville-nom]").textContent = v.slug === "casablanca" ? "Casablanca · plus de 350 adresses" : v.nom;
+  // les 15 posts, dans l'ordre de publication ; chacun ouvre sa liste (ou l'outil, ou l'à-propos)
+  const marque = window.NAKLO_POSTS_MARQUE || [];
+  const posts = [marque[0], ...window.NAKLO_LISTES, marque[1]].filter(Boolean).map(x => ({
+    post: x.post, titre: x.titre,
+    href: x.slug ? N.lienListes(v, x.slug) : x.lien === "outil" ? N.lienVille(v) : x.lien
+  }));
+  N.$("#rail-listes").innerHTML = posts.map(x =>
+    `<a class="post-tuile incline" href="${x.href}"><img src="assets/posts/${x.post}" alt="" loading="lazy" width="720" height="900"><span class="post-titre">${N.esc(x.titre)}</span></a>`).join("");
+  // mots qui tournent sous le titre, avec un petit effet de lettres brouillées
+  const mots = ["ce soir", "après minuit", "à moins de 50 DH", "pour un date", "à 10", "pour réviser", "un dimanche"];
+  const mot = N.$("#mot");
+  if (mot && !N.reduit) {
+    const signes = "abcdefghijklmnopqrstuvwxyz";
+    let k = 0;
+    setInterval(() => {
+      k = (k + 1) % mots.length;
+      const cible = mots[k];
+      let t = 0;
+      const brouille = setInterval(() => {
+        t++;
+        mot.textContent = [...cible].map((c, j) => c === " " || j < t ? c : signes[Math.floor(Math.random() * signes.length)]).join("");
+        if (t >= cible.length) { clearInterval(brouille); mot.textContent = cible; }
+      }, 35);
+    }, 2400);
+  }
+  // bandeau qui défile : des infos concrètes tirées des vraies adresses
+  N.chargerVille(v.slug).then(DB => {
+    if (!DB.length) return;
+    const bien = DB.filter(p => (p.rating || 0) >= 4.3 && (p.reviews || 0) >= 80);
+    const tri = (l, f) => [...l].sort(f);
+    const tard = p => { const m = (p.hours || "").match(/–\s*(\d{1,2})h/); return m && +m[1] >= 1 && +m[1] <= 6 ? +m[1] : 0; };
+    const faits = [
+      ...tri(bien, (a, b) => a.price - b.price).slice(0, 3).map(p => `<b>~${p.price} DH</b> chez ${N.esc(p.name)}`),
+      ...tri(DB.filter(tard), (a, b) => tard(b) - tard(a)).slice(0, 2).map(p => `Ouvert jusqu'à <b>${tard(p)} h</b> : ${N.esc(p.name)}`),
+      ...tri(bien, (a, b) => b.reviews - a.reviews).slice(0, 2).map(p => `Noté <b>${N.fmt(p.rating.toFixed(1))}</b> sur ${p.reviews.toLocaleString("fr-FR")} avis : ${N.esc(p.name)}`),
+      ...tri(bien, (a, b) => b.rating - a.rating || b.reviews - a.reviews).slice(0, 2).map(p => `Pépite à <b>${N.fmt(p.rating.toFixed(1))}</b> : ${N.esc(p.name)}`),
+      `<b>${DB.length}</b> adresses à ${N.esc(v.nom)}, triées à la main`
+    ];
+    const etincelle = '<svg class="sep" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14.5 9.5 L24 12 L14.5 14.5 L12 24 L9.5 14.5 L0 12 L9.5 9.5 Z" fill="currentColor"/></svg>';
+    const ligne = faits.map(f => `<span class="fait">${f}</span>${etincelle}`).join("");
+    const piste = N.$("#defile .defile-piste");
+    // la 2e copie sert à boucler sans couture ; elle est cachée aux lecteurs d'écran
+    piste.innerHTML = `<div class="defile-groupe">${ligne}</div><div class="defile-groupe" aria-hidden="true">${ligne}</div>`;
+    N.$("#defile").hidden = false;
+  });
+  N.$("#c-listes").dataset.compte = window.NAKLO_LISTES.length;
+  N.chargerVille(v.slug).then(DB => { if (DB.length) N.$("#c-adresses").dataset.compte = DB.length; N.compter(N.$(".chiffres")); });
+  N.$("#villes").innerHTML = N.VILLES.map(c =>
+    `<a class="ville-carte incline${c.on ? " on" : ""}" href="${N.lienVille(c)}"><span class="pinceau">${N.esc(c.nom)}</span><small>${c.on ? "Ouverte" : "Bientôt"}</small></a>`).join("");
+  N.incliner();
+})();
+</script>
+</body>
+</html>

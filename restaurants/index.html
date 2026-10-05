@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0B090F">
+<link rel="icon" href="../assets/nakli-icone.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/nakli-photo-profil.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mansalva&family=Instrument+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<title>Restaurants : travaillons ensemble · naklo</title>
+<meta name="description" content="Vous avez un restaurant ? Naklo parle chaque soir à des jeunes qui cherchent où manger. Posts sponsorisés, mise en avant étiquetée : le classement, lui, ne s'achète pas.">
+</head>
+<body data-root="../" data-page="restaurants">
+<div data-entete></div>
+
+<main id="contenu" class="wrap">
+  <header class="page-tete">
+    <nav class="fil" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span aria-hidden="true">/</span><span aria-current="page">Restaurants</span></nav>
+    <p class="surtitre" style="margin-top:8px">Restaurants</p>
+    <h1 class="pinceau penche">Travaillons <span class="ambre">ensemble</span></h1>
+    <p class="chapo">Naklo parle à la Gen Z marocaine au moment où elle se demande où manger : le soir, sur Instagram et TikTok, avec un budget en tête. On peut vous faire découvrir, honnêtement.</p>
+  </header>
+
+  <section class="section" aria-labelledby="t-principes">
+    <div class="section-tete"><p class="surtitre">Nos règles</p><h2 class="pinceau penche" id="t-principes">Ce qui ne s'achète pas</h2></div>
+    <ul class="principes">
+      <li><b>Le classement</b><p>Nakli classe par spécialité, puis par note Google et nombre d'avis. Aucun paiement ne change cet ordre.</p></li>
+      <li><b>La transparence</b><p>Tout contenu ou emplacement payé est étiqueté « Partenaire » ou « Sponsorisé ». Pas de pub déguisée.</p></li>
+      <li><b>L'honnêteté</b><p>Prix estimés, horaires vérifiés. On ne publie pas une info qu'on ne peut pas confirmer.</p></li>
+    </ul>
+  </section>
+
+  <section class="section" aria-labelledby="t-offres">
+    <div class="section-tete"><p class="surtitre">Ce qu'on propose</p><h2 class="pinceau penche" id="t-offres">Trois façons de se rencontrer</h2></div>
+    <div class="offres">
+      <div class="offre carte"><span class="tag">Dès maintenant</span><b>Posts et stories sponsorisés</b><p>Votre adresse dans un post ou une story @naklo_ma, avec la mention « Sponsorisé ».</p></div>
+      <div class="offre carte"><span class="tag">Bientôt</span><b>Mise en avant dans l'outil</b><p>Un emplacement « Partenaire » clairement étiqueté dans Demande à Nakli, à côté du classement, jamais dedans.</p></div>
+      <div class="offre carte"><span class="tag">Plus tard</span><b>Fiche resto enrichie</b><p>Une page pour votre restaurant : photos, menu, offre réservée à la communauté Naklo.</p></div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="t-contact">
+    <div class="deux-col">
+      <div class="section-tete">
+        <p class="surtitre">Contact</p>
+        <h2 class="pinceau penche" id="t-contact">Parlons-en</h2>
+        <p class="mut">Remplissez ce formulaire : il prépare un e-mail vers <a class="handle" href="mailto:contact.naklo@gmail.com">contact.naklo@gmail.com</a> dans votre messagerie, vous n'avez plus qu'à l'envoyer. Ou écrivez-nous sur Instagram, <a class="handle" href="https://www.instagram.com/naklo_ma/" target="_blank" rel="noopener">@naklo_ma</a>.</p>
+      </div>
+      <form class="form" id="form-resto" novalidate>
+        <div class="duo">
+          <div class="champ"><label for="f-resto">Nom du restaurant</label><input type="text" id="f-resto" name="resto" autocomplete="organization" required aria-describedby="e-resto"><span class="erreur" id="e-resto" hidden>Indiquez le nom du restaurant.</span></div>
+          <div class="champ"><label for="f-ville">Ville</label><select id="f-ville" name="ville"></select></div>
+        </div>
+        <div class="duo">
+          <div class="champ"><label for="f-nom">Votre nom</label><input type="text" id="f-nom" name="nom" autocomplete="name" required aria-describedby="e-nom"><span class="erreur" id="e-nom" hidden>Indiquez votre nom.</span></div>
+          <div class="champ"><label for="f-tel">Téléphone ou Instagram</label><input type="text" id="f-tel" name="contact" autocomplete="tel" aria-describedby="a-tel"><span class="aide" id="a-tel">Facultatif, pour vous répondre plus vite.</span></div>
+        </div>
+        <div class="champ"><label for="f-objet">Ce qui vous intéresse</label>
+          <select id="f-objet" name="objet"><option>Post ou story sponsorisé</option><option>Mise en avant dans l'outil</option><option>Signaler une erreur sur notre fiche</option><option>Autre</option></select></div>
+        <div class="champ"><label for="f-msg">Message</label><textarea id="f-msg" name="message" placeholder="Quelques mots sur votre restaurant et ce que vous cherchez."></textarea></div>
+        <button class="btn btn-large" type="submit">Préparer l'e-mail</button>
+        <p class="statut" id="f-statut" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<div data-pied></div>
+<script src="../data/villes.js"></script>
+<script src="../assets/naklo.js"></script>
+<script>
+(function () {
+  const N = window.Naklo, f = N.$("#form-resto");
+  N.$("#f-ville").innerHTML = N.VILLES.map(v => `<option${v.slug === N.villeActive().slug ? " selected" : ""}>${N.esc(v.nom)}</option>`).join("") + "<option>Autre</option>";
+  const requis = [["#f-resto", "#e-resto"], ["#f-nom", "#e-nom"]];
+  requis.forEach(([c, e]) => N.$(c).addEventListener("blur", () => verifier(c, e)));
+  function verifier(c, e) { const ok = N.$(c).value.trim() !== ""; N.$(c).setAttribute("aria-invalid", !ok); N.$(e).hidden = ok; return ok; }
+  f.addEventListener("submit", ev => {
+    ev.preventDefault();
+    const oks = requis.map(([c, e]) => verifier(c, e));
+    if (oks.includes(false)) { N.$(requis[oks.indexOf(false)][0]).focus(); return; }
+    const d = Object.fromEntries(new FormData(f));
+    const sujet = `[Restaurant] ${d.resto} · ${d.objet}`;
+    const corps = `Restaurant : ${d.resto}\nVille : ${d.ville}\nNom : ${d.nom}\nContact : ${d.contact || "-"}\nIntérêt : ${d.objet}\n\n${d.message || ""}`;
+    location.href = `mailto:contact.naklo@gmail.com?subject=${encodeURIComponent(sujet)}&body=${encodeURIComponent(corps)}`;
+    N.$("#f-statut").textContent = "Votre messagerie s'ouvre avec l'e-mail prêt. Si rien ne se passe, écrivez à contact.naklo@gmail.com.";
+  });
+})();
+</script>
+</body>
+</html>

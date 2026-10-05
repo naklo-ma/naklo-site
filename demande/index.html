@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demande à Nakli · naklo</title>
+<meta name="robots" content="noindex">
+<script>
+/* Lien court (lien en bio) : renvoie vers l'outil de la dernière ville choisie, en gardant les options de l'URL. */
+(function () {
+  var v = "casablanca";
+  try { var s = JSON.parse(localStorage.getItem("nk-ville")); if (/^[a-z-]+$/.test(s)) v = s; } catch (e) {}
+  location.replace("../" + v + "/" + location.search);
+})();
+</script>
+<meta http-equiv="refresh" content="1; url=../casablanca/">
+</head>
+<body style="background:#0B090F;color:#F3E6CC;font-family:system-ui,sans-serif;padding:24px">
+<p>Nakli arrive… <a href="../casablanca/" style="color:#E8A33D">Ouvrir Demande à Nakli</a></p>
+</body>
+</html>

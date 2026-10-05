@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0B090F">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/nakli-icone.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/nakli-photo-profil.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mansalva&family=Instrument+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<title>Mes favoris · naklo</title>
+</head>
+<body data-root="../" data-page="favoris">
+<div data-entete></div>
+<main id="contenu" class="wrap">
+  <header class="page-tete">
+    <nav class="fil" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span aria-hidden="true">/</span><span aria-current="page">Mes favoris</span></nav>
+    <h1 class="pinceau penche">Mes <span class="ambre">favoris</span></h1>
+    <p class="chapo">Les adresses que tu as gardées avec le cœur. Elles restent sur ton téléphone, sans compte.</p>
+  </header>
+  <div id="favoris" style="margin-top:20px"></div>
+</main>
+<div data-pied></div>
+<script src="../data/villes.js"></script>
+<script src="../assets/naklo.js"></script>
+<script>
+(function () {
+  const N = window.Naklo, zone = N.$("#favoris");
+  async function rendre() {
+    const favs = N.lireFavoris();
+    if (!favs.length) {
+      zone.innerHTML = `<div class="panneau bientot">${N.nakliSVG("affame")}
+        <h2 class="pinceau" style="font-size:1.9rem">Rien ici pour l'instant</h2>
+        <p class="mut" style="max-width:38ch">Touche le cœur sur une carte de resto pour la garder ici. Pratique pour retrouver tes adresses au moment de sortir.</p>
+        <a class="btn" href="${N.lienVille(N.villeActive())}">Demande à Nakli</a>
+        <a class="lien-fleche" href="${N.lienListes(N.villeActive())}">Ou pioche dans les listes →</a></div>`;
+      return;
+    }
+    let h = "";
+    for (const v of N.VILLES.filter(v => favs.some(f => f.ville === v.slug))) {
+      const DB = await N.chargerVille(v.slug);
+      const items = favs.filter(f => f.ville === v.slug).map(f => DB.find(p => p.id === f.id)).filter(Boolean);
+      if (!items.length) continue;
+      const texte = `Mes adresses Naklo à ${v.nom} :\n${items.map(p => `- ${p.name} (~${p.price} DH${p.area ? ", " + p.area : ""})`).join("\n")}\nVia @naklo_ma`;
+      h += `<div class="selection-tete"><h2 class="pinceau penche">${N.esc(v.nom)} <span class="mut">(${items.length})</span></h2>
+        <div class="liens"><a class="btn btn-secondaire btn-petit avec-logo" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(texte)}">${N.I.whatsapp}Envoyer la liste</a></div></div>
+        <ol class="cartes grille" style="margin:12px 0 28px">${items.map((p, i) => N.carte({ p, pourquoi: `${p.cuisine.split(",")[0]}, environ ${p.price} DH par personne${p.rating ? `, noté ${N.fmt(p.rating)} sur ${p.reviews.toLocaleString("fr-FR")} avis` : ""}.`, style: [] }, i, { ville: v.nom, top: false, pastille: "Favori" })).join("")}</ol>`;
+    }
+    zone.innerHTML = h;
+  }
+  rendre();
+  document.addEventListener("naklo:favoris", rendre);
+})();
+</script>
+</body>
+</html>

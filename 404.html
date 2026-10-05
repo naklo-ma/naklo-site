@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0B090F">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/nakli-icone.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mansalva&family=Instrument+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<title>Page introuvable · naklo</title>
+</head>
+<!-- Page servie pour toute adresse inconnue : les liens partent de la racine du site (/). -->
+<body data-root="/" data-page="404">
+<div data-entete></div>
+<main id="contenu" class="wrap wrap-etroit">
+  <div class="perdu">
+    <span data-nakli="affame" class="perdu-nakli nakli-flotte"></span>
+    <p class="perdu-code" aria-hidden="true">404</p>
+    <h1 class="pinceau penche">Nakli s'est perdu en cherchant <span class="neon">à manger</span>…</h1>
+    <p class="mut">Cette page n'existe pas, ou plus. Le lien est peut-être ancien, ou il y a une petite faute dans l'adresse.</p>
+    <div class="perdu-actions">
+      <a class="btn" href="/casablanca/" data-lien-outil>Demande à Nakli</a>
+      <a class="btn btn-secondaire" href="/listes/?ville=casablanca" data-lien-listes>Voir les listes</a>
+    </div>
+    <a class="lien-fleche" href="/">← Retour à l'accueil</a>
+  </div>
+</main>
+<div data-pied></div>
+<script src="/data/villes.js"></script>
+<script src="/assets/naklo.js"></script>
+<script>
+(function () {
+  const N = window.Naklo, v = N.villeActive();
+  N.$("[data-lien-outil]").href = N.lienVille(v);
+  N.$("[data-lien-listes]").href = N.lienListes(v);
+})();
+</script>
+</body>
+</html>
